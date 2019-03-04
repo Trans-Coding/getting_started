@@ -1,0 +1,105 @@
+Windows Apache and PHP Install
+Download Apache for Windows: https://www.apachelounge.com/download/
+filename: httpd-2.4.29-Win64-VC15.zip
+Download PHP 7 for Windows (select ‘Thread Safe’): http://windows.php.net/qa/
+filename: 
+php-7.2.0-Win32-VC15-x64.zip
+Check SHA256 Checksum with shell command:
+
+CertUtil -hashfile <path> SHA256
+
+Create folders:
+c:/Server/bin
+c:/Server/data/DB
+c:/Server/data/htdocs
+
+Move Apache24 and PHP into the bin folder
+
+See my included httpd.conf and php.ini for file changes
+
+Open PowerShell to install Apache2.4
+
+c:\Server\bin\Apache24\bin\httpd.exe -k install
+
+or start/restart
+
+c:\Server\bin\Apache24\bin\httpd.exe -k start
+c:\Server\bin\Apache24\bin\httpd.exe -k restart
+
+Check initial status by pointing your browser to localhost:80 or localhost:8080
+
+Set environmental variables for startup of Apache server with Windows
+
+
+
+Mac Apache installation
+
+First make a directory in your home directory called Sites, using the terminal, you can do this with the following
+
+$ mkdir ~/Sites
+
+In this directory is where we will clone our repositories. 
+We’ll need to tell Apache to recognize this as a directory. We must create a configuration file in the apache system area. Using the terminal, let’s see what our user name is
+
+$ whoami
+
+
+When I run this command, my username is jay. With this name, we must create the config file.
+
+$ sudo touch /etc/apache2/users/{{USERNAME}}.conf
+
+Replace {{USERNAME}} with your respective username. We now need to set up a few configurations.
+Open the file found here with the following command
+
+$ sudo nano /etc/apache2/users/{{USERNAME}}.conf
+
+In this file, type or copy/paste the following:
+
+<Directory "/Users/{{USERNAME}}/Sites/">
+    Options Indexes MultiViews FollowSymLinks
+    AllowOverride All
+    Require all granted
+    Order allow,deny
+    Allow from all
+</Directory>
+
+Let’s make sure our permissions are right, run the following
+
+$ sudo chmod 644 /etc/apache2/users/{{USERNAME}}.conf
+
+If you receive an error, refer to:
+https://stackoverflow.com/questions/10873295/error-message-forbidden-you-dont-have-permission-to-access-on-this-server
+
+Let’s now edit the main apache configuration file. Use the following command to open the file
+
+$ sudo nano /etc/apache2/httpd.conf
+
+With the file open, look for the following lines of code, they may be spread across the file. Make sure they are uncommented. E.g. Make sure they do not have a # in front of it.
+
+LoadModule authz_host_module libexec/apache2/mod_authz_host.so
+LoadModule authz_core_module libexec/apache2/mod_authz_core.so
+LoadModule userdir_module libexec/apache2/mod_userdir.so
+LoadModule vhost_alias_module libexec/apache2/mod_vhost_alias.so
+LoadModule rewrite_module libexec/apache2/mod_rewrite.so
+
+
+Include /private/etc/apache2/extra/httpd-userdir.conf
+Include /private/etc/apache2/extra/httpd-vhosts.conf
+
+To find these lines, I did a search and made sure to remove the # 
+You can use control+W to enter search mode in nano.
+We now need to make changes so that apache will recognize the folder we made under “Sites” as websites to be displayed. 
+
+Edit the file with the following:
+
+$ sudo nano /etc/apache2/extra/httpd-userdir.conf
+
+Look for the following and remove the # in front of it.
+
+Include /private/etc/apache2/users/*.conf
+
+Run the following command to get PHP 7.2
+curl -s https://php-osx.liip.ch/install.sh | bash -s 7.2
+
+Now restart apache with:
+sudo apachectl restart
