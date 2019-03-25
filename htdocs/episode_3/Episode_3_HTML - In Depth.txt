@@ -9,3 +9,5 @@ All reference code and notes can be found at: https://github.com/Trans-Coding/
 Applying HTML to a Resume
 Tips on Tech Resume writing: https://medium.freecodecamp.org/writing-a-killer-software-engineering-resume-b11c91ef699d
 ISO Language Codes: https://www.w3schools.com/tags/ref_language_codes.asp
+Building Tables: https://www.w3schools.com/html/html_tables.asp
+Email link example: https://www.w3schools.com/html/tryit.asp?filename=tryhtml_links_mailto

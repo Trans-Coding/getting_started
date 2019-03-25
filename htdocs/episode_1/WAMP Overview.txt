@@ -1,0 +1,21 @@
+Parts of the WAMP stack
+
+Recall the Stack:
+Windows - OS
+Apache - Server
+MySql - DB
+PHP - CGI Language
+interact with HTML and DB
+PHP Hypertext Protocol
+
+Job of each:
+Windows - runs the hardware which allows all software to deliver a product
+Apache - server software which delivers data to and from the hardware to the requesting or delivering service
+MySql - store, retrieve, and search through large quantity of data quickly
+PHP - deliver data to and from database and to and from the user, acts as backend and frontend
+
+
+What is HTML?
+
+-not a programming language, marking documents in a legible way for any computer to understand
+<p>paragraph <strong>element</strong></p> enclosed with tags

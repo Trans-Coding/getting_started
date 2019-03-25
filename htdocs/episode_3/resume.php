@@ -80,10 +80,10 @@
 					Senior Project
 				</th>
 				<th>
-					Catalysis Group, Inc., Sacramento, CA	
+					Catalysis Group, Inc.
 				</th>
 				<th>
-					2017
+					Sacramento, CA	2017
 				</th>
 			</tr>
 		</table>
