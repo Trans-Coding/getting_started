@@ -1,7 +1,0 @@
-Episode 4 CSS Style and Bootstrap
-
- - better division of sections for preparation of bootstrap
- - install/link bootstrap
- - begin creating an overall theme
- - further refine the resume file
- - begin dividing the index page
