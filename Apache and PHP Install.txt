@@ -19,12 +19,12 @@ See my included httpd.conf and php.ini for file changes
 
 Open PowerShell to install Apache2.4
 
-c:\Server\bin\Apache24\bin\httpd.exe -k install
+\Server\bin\Apache24\bin\httpd.exe -k install
 
 or start/restart
 
-c:\Server\bin\Apache24\bin\httpd.exe -k start
-c:\Server\bin\Apache24\bin\httpd.exe -k restart
+\Server\bin\Apache24\bin\httpd.exe -k start
+\Server\bin\Apache24\bin\httpd.exe -k restart
 
 Check initial status by pointing your browser to localhost:80 or localhost:8080
 
