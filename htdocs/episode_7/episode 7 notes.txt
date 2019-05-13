@@ -1,6 +1,5 @@
 Episode 7 - Deploying your website to the internet for public viewing
 
- - deploying on github.io (free)
  - purchasing a domain for page specific deployment (may cost money)
 
 pages for reference:
