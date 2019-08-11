@@ -69,7 +69,7 @@
 						<a class="nav-link" href="/public_html/">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/public_html/resume.html">Resume</a>
+						<a class="nav-link" href="/public_html/resume.php">Resume</a>
 					</li>
 				</ul>
 			</div>
@@ -77,7 +77,7 @@
 		
 		<div class="section_holder">My name is Jade; I started a YouTube channel and this webpage to help you get a job in the tech world doing what you love. The best way to do that is to make a webpage that shows others what you can do. So join me: together, we can really put your skills to best use in a way that will show a potential employer just what you are capable of!</div>
 
-		<div class="section_holder">If you would like to see my resume, <a href="/public_html/resume.html">please click here</a>.</div>
+		<div class="section_holder">If you would like to see my resume, <a href="/public_html/resume.php">please click here</a>.</div>
 
 		<div class="section_holder">This site is a work in progress, and more is on the way soon.</div>
 
